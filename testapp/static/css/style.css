@@ -1,0 +1,25 @@
+/* aaaaa */
+@charset "UTF-8";
+header {
+	position: relative;
+	width: 100%;
+	line-height: 40px;
+	background:#3c3c3c;
+	display: inline-block;
+
+
+}
+header ul {
+	padding: 0 30px;
+}
+header li {
+	display: inline-block;
+	padding: 0 6px;
+	font-size: 25px;
+	letter-spacing: .1em;
+    line-height: 100px;
+    align-items: center;
+}
+header li a {
+	color: #fff;
+}
