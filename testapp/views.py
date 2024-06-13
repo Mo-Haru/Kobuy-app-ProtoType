@@ -1,5 +1,4 @@
 from testapp import app
-from testapp import db
 from flask import render_template, request, redirect, url_for
 
 @app.route('/')
