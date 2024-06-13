@@ -1,5 +1,5 @@
 from testapp import app
-from flask import render_template 
+from flask import render_template, request, redirect, url_for
 
 @app.route('/')
 def index():
@@ -7,4 +7,11 @@ def index():
 
 @app.route("/menu")
 def menu():
-    return 
+    return render_template("testapp/menu.html")
+
+@app.route("/reserve", methods = ["GET", "POST"])
+def reserve():
+    if request.method == "GET":
+        return render_template("testapp/reserve.html")
+    if request.method == "POST":
+        return "<h1>予約完了！！！</h1>"
