@@ -10,5 +10,5 @@ VSCodeでターミナル(T)から新しいターミナルを選択し入力し�
 
 ## サーバーの起動方法
 ```
-\Github\Kobuy-app-ProtoType> pipenv run server.py
+\Github\Kobuy-app-ProtoType> pipenv run start
 ```
