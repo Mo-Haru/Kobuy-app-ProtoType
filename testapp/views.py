@@ -5,6 +5,6 @@ from flask import render_template
 def index():
     return '<h1>Kobuy-App-ProtoType<h1>'
 
-@app.route("/")
+@app.route("/menu")
 def menu():
     return 
