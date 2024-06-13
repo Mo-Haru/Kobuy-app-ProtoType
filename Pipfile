@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 testapp = "*"
-flask-sqlalchemy = "*"
+flask-sqlalchemy = "==3.0.3"
 
 [dev-packages]
 
