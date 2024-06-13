@@ -5,8 +5,12 @@ name = "pypi"
 
 [packages]
 flask = "*"
+testapp = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.11"
+
+[scripts]
+start = "python server.py"

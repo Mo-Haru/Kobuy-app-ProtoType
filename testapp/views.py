@@ -3,7 +3,7 @@ from flask import render_template
 
 @app.route('/')
 def index():
-    return '<h1>Kobuy-App-ProtoType<h1>'
+    return render_template('testapp/index.html')
 
 @app.route("/menu")
 def menu():
