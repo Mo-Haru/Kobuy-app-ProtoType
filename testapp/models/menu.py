@@ -1,5 +1,4 @@
 from testapp import db
-from datetime import datetime
 
 
 class menu(db.Model):

@@ -7,5 +7,4 @@ app.config.from_object('testapp.config')
 db = SQLAlchemy(app)
 from testapp.models import menu
 
-
 import testapp.views
