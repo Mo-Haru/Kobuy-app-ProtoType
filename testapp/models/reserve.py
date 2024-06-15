@@ -1,11 +1,11 @@
 from testapp import db
+from datetime import datetime
 
-
-class menu(db.Model):
-    __tablename__ = 'menu'
+class reserve(db.Model):
+    __tablename__ = 'reserve'
     id = db.Column(db.Integer, primary_key=True)
-    productname = db.Column(db.String(255))
-    price = db.Column(db.String(255))
-    number_of_count = db.Column(db.Boolean)
-    explanation = db.Column(db.String(255))
-    product_image = db.Column(db.String(255))
+    reserver = db.Column(db.String(255))
+    e_mail = db.Column(db.String(255))
+    resreve_dic = db.Column(db.DateTime)
+    reserve_time = db.Column(db.DateTime, default = datetime.now)
+    cancel = db.Column(db.Boolean)
