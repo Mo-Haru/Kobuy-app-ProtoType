@@ -1,5 +1,5 @@
 from testapp import app
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request
 
 @app.route('/')
 def index():
