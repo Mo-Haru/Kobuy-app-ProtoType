@@ -23,4 +23,9 @@ header li {
 header li a {
 	color: #fff;
 }
+header li.webname{
+	color: #fff;
+}
+
+
 #sample {width: 3em;}

@@ -3,15 +3,24 @@ from flask import render_template, request, redirect, url_for
 
 @app.route('/')
 def index():
-    return render_template('testapp/index.html')
+    title = "購買予約アプリ試作版"
+
+    return render_template('testapp/index.html', webtitle = title)
 
 @app.route("/menu")
 def menu():
-    return render_template("testapp/menu.html")
+    title = "購買メニュー"
+    return render_template("testapp/menu.html", webtitle = title)
+
+
 
 @app.route("/reserve", methods = ["GET", "POST"])
 def reserve():
+    title = "購買予約フォーム"
     if request.method == "GET":
-        return render_template("testapp/reserve.html")
+        return render_template("testapp/reserve.html", webtitle = title)
     if request.method == "POST":
-        return "<h1>予約完了！！！</h1>"
+
+        
+        title = "予約完了"
+        return render_template("testapp/reserve-done.html", webtitle = title)
