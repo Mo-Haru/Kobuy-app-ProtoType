@@ -1,6 +1,6 @@
 from testapp import app, db
 from flask import render_template, request
-from testapp.models import reserve
+from testapp.models.reserve import Reserve
 
 @app.route('/')
 def index():
@@ -22,10 +22,10 @@ def reserve():
         return render_template("testapp/reserve.html", webtitle = title)
     if request.method == "POST":
         buycnt = request.form["buycnt"]
-        reserve = reserve(
+        reserve = Reserve(
             reserver="a",
             e_mail="a",
-            reserve_dic={"唐揚げ": buycnt}
+            resreve_dic=f"唐揚げ{buycnt}個"
         )
         db.session.add(reserve)
         db.session.commit()
