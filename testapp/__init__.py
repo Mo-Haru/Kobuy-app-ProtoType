@@ -6,5 +6,6 @@ app.config.from_object('testapp.config')
 
 db = SQLAlchemy(app)
 from testapp.models import menu
+from testapp.models import reserve
 
 import testapp.views
