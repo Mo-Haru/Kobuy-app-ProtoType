@@ -9,4 +9,4 @@ class menu(db.Model):
     price = db.Column(db.String(255))
     number_of_count = db.Column(db.Boolean)
     explanation = db.Column(db.String(255))
-    product_image = db.column(db.String(255))
+    product_image = db.Column(db.String(255))
