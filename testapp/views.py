@@ -20,7 +20,7 @@ def reserve():
     if request.method == "GET":
         return render_template("testapp/reserve.html", webtitle = title)
     if request.method == "POST":
-
+        buycnt = request.form["buycnt"]
         
         title = "予約完了"
-        return render_template("testapp/reserve-done.html", webtitle = title)
+        return render_template("testapp/reserve-done.html", webtitle = title, buycnt=buycnt)
