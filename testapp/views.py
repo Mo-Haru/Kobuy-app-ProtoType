@@ -22,12 +22,15 @@ def reserve():
         return render_template("testapp/reserve.html", webtitle = title)
     if request.method == "POST":
         buycnt = request.form["buycnt"]
+        reserver_name = request.form["name"]
+        reserver_e_mail = request.form["e_mail"]
         reserve = Reserve(
-            reserver="a",
-            e_mail="a",
+            reserver=reserver_name,
+            e_mail=reserver_e_mail,
             resreve_dic=f"唐揚げ{buycnt}個"
         )
         db.session.add(reserve)
         db.session.commit()
         title = "予約完了"
+        print(f"名前：{reserver_name}, メールアドレス：{reserver_e_mail}, 唐揚げを{buycnt}個頼みました。")
         return render_template("testapp/reserve-done.html", webtitle = title, buycnt=buycnt)
