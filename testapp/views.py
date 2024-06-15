@@ -1,4 +1,4 @@
-from testapp import app
+from testapp import app, db
 from flask import render_template, request
 
 @app.route('/')
