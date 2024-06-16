@@ -6,7 +6,7 @@ header {
 	line-height: 40px;
 	background:#3c3c3c;
 	display: inline-block;
-
+	height: 50px;
 
 }
 header ul {
@@ -15,15 +15,15 @@ header ul {
 header li {
 	display: inline-block;
 	padding: 0 6px;
-	font-size: 25px;
+	font-size: 20px;
 	letter-spacing: .1em;
-    line-height: 100px;
+    line-height: 50px;
     align-items: center;
 }
 header li a {
 	color: #fff;
 }
-header li.webname{
+header li.webtitle{
 	color: #fff;
 }
 

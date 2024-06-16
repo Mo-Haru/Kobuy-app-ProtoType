@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>予約者一覧</h2>
+    <ul>
+        {% for reserve in reserve %}
+            <li>Id: {{ reserve.id }} 予約者: {{ reserve.reserver }} email: {{ reserve.e_mail }} 予約品: {{ reserve.reserve_dic }} 予約時間: {{ reserve.reserve_time }} キャンセル: {{ reserve.chansel }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

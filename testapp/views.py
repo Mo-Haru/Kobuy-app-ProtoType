@@ -13,6 +13,16 @@ def menu():
     title = "購買メニュー"
     return render_template("testapp/menu.html", webtitle = title)
 
+@app.route("/contact", methods = ["GET", "POST"])
+def contact():
+    if request.method == "GET":
+        title = "お問い合わせフォーム"
+        return render_template("testapp/contact.html", webtitle = title)
+    if request.method == "POST":
+        title = "お問い合わせ完了"
+        return render_template("testapp/contact-done.html", webtitle = title)
+
+
 
 
 @app.route("/reserve", methods = ["GET", "POST"])
@@ -34,3 +44,9 @@ def reserve():
         title = "予約完了"
         print(f"名前：{reserver_name}, メールアドレス：{reserver_e_mail}, 唐揚げを{buycnt}個頼みました。")
         return render_template("testapp/reserve-done.html", webtitle = title, buycnt=buycnt)
+    
+
+@app.route("/reserve_list")
+def reserve_list():
+    reserve = Reserve.query.all()
+    return render_template("/testapp/reserve_list.html", reserve=reserve)
