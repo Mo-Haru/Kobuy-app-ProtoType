@@ -2,24 +2,47 @@
 
 {% block content %}
 <div class="container mt-4">
-    <ul>
-        <li>
-            主食
-        </li>
-    </ul>
     <form action="/reserve" method="POST">
         <div>
             <input type="text" id="email" name="name" placeholder="ユーザー名"><br>
             <input type="email" id="#" name="e_mail" placeholder="メールアドレス"><br>
         </div>
-        
+        <!--
         <div class="form-check form-check-inline">
             <label class="form-check-label" for="sample">sample</label>
             <input class="form-check-input" type="number" id="sample" name="buycnt" max="10" min="1" step="1" value="1" checked>
             
         </div>
+        -->
+
+        <label class="number-spinner-wrap">
+            <input type="number" step="1" value="1">
+            <span class="spinner spinner-down">-</span>
+            <span class="spinner spinner-up">+</span>
+        </label>
+
         <div>
-            <img class="img" src="..\..\static\img\OIG2.png"/>
+            <ul class="line">
+                <li class="list"> 
+                    <div class="line">
+                    <p>sample1</p>
+                    <input type="radio" id="radi">
+                    <input class="form-check-input" type="number" id="sample" name="buycnt" max="10" min="1" step="1" value="1" checked></div>
+                    <img src="..\..\static\img\OIG2.png" width="200" height="200" alt="">
+                </li>
+                <li class="list">
+                    <div class="line">
+                    <p>sample2</p>
+                    <input class="form-check-input" type="number" id="sample" name="buycnt" max="10" min="1" step="1" value="1" checked></div>
+                    <img src="..\..\static\img\OIG2.png" width="200" height="200" alt="">
+                </li>
+                <li class="list">
+                    <div class="line">
+                    <p>sample3</p>
+                    <input class="form-check-input" type="number" id="sample" name="buycnt" max="10" min="1" step="1" value="1" checked></div>
+                    <img src="..\..\static\img\OIG2.png" width="200" height="200" alt="">
+                </li>
+            </ul>
         </div>
 
         <button type="submit" class="reserve btn">送信</button>
