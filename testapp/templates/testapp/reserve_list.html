@@ -1,12 +1,46 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<style>
+    .reserve-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px; /* 各予約の間にスペースを追加 */
+    }
+    .reserve-table th, .reserve-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    .reserve-table th {
+      background-color: #f2f2f2;
+    }
+</style>
 <div class="container mt-4">
     <h2>予約者一覧</h2>
-    <ul>
-        {% for reserve in reserve %}
-            <li>Id: {{ reserve.id }} 予約者: {{ reserve.reserver }} email: {{ reserve.e_mail }} 予約品: {{ reserve.reserve_dic }} 予約時間: {{ reserve.reserve_time }} キャンセル: {{ reserve.chansel }}</li>
-        {% endfor %}
-    </ul>
+    <table class="reserve-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>予約者</th>
+            <th>email</th>
+            <th>予約品</th>
+            <th>予約時間</th>
+            <th>キャンセル</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserve in reserve %}
+            <tr>
+              <td>{{ reserve.id }}</td>
+              <td>{{ reserve.reserver }}</td>
+              <td>{{ reserve.e_mail }}</td>
+              <td>{{ reserve.reserve_dic }}</td>
+              <td>{{ reserve.reserve_time }}</td>
+              <td>{{ reserve.chansel }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 </div>
 {% endblock %}
