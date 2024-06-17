@@ -5,8 +5,13 @@ name = "pypi"
 
 [packages]
 flask = "*"
+testapp = "*"
+flask-sqlalchemy = "==3.0.3"
 
 [dev-packages]
 
 [requires]
 python_version = "3.11"
+
+[scripts]
+start = "python server.py"
