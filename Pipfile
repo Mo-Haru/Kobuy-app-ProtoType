@@ -12,3 +12,7 @@ testapp = "*"
 
 [requires]
 python_version = "3.12"
+
+
+[scripts]
+start = "python server.py"
