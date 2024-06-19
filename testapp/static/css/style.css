@@ -52,10 +52,9 @@ header li.webtitle{
     height: 2rem;
 }
 /** デフォルトのスピンボタンを隠す **/
-.number-spinner-wrap input::-webkit-outer-spin-button,
-.number-spinner-wrap input::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
 }
 /** input要素 **/
 .number-spinner-wrap input{
