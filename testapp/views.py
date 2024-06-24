@@ -8,6 +8,11 @@ def index():
 
     return render_template('testapp/index.html', webtitle = title)
 
+@app.route("/login")
+def login():
+    title = "ログイン"
+    return render_template("testapp/login.html", webtitle = title)
+
 @app.route("/menu")
 def menu():
     title = "購買メニュー"
@@ -50,3 +55,4 @@ def reserve():
 def reserve_list():
     reserve = Reserve.query.all()
     return render_template("/testapp/reserve_list.html", reserve=reserve)
+
