@@ -27,7 +27,9 @@ header li.webtitle{
 	color: #fff;
 }
 
-
+li.login {
+  margin-left: auto;
+}
 /*画像横並び*/
 .list {
     list-style: none;
