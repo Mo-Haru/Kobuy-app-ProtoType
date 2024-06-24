@@ -1,17 +1,26 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1 class="md-typescale-display-medium">ログイン</h1>
 <form class="login-form">
-    <p class="md-typescale-body-medium">Check out these controls in a form!</p>
-
-    <md-outlined-text-field label="本名" ></md-outlined-text-field>
-    <md-outlined-text-field label="メールアドレス" ></md-outlined-text-field>
-    <md-outlined-text-field label="パスワード" ></md-outlined-text-field>
-    <md-outlined-button type="login">ログイン</md-outlined-button>
-  </form>
+    <div class="container">
+        <h3 class="md-typescale-display-medium">ログイン</h3>
 
 
+            <div>
+                <ul>
+                    <md-outlined-text-field class="login-form" label="メールアドレス" ></md-outlined-text-field><br>
+                </ul>
+                <ul>      
+                    <md-outlined-text-field class="login-form" label="パスワード" ></md-outlined-text-field><br>
+                </ul>
+                <ul>
+                    <md-outlined-button type="login">ログイン</md-outlined-button>
+                </ul>
 
+
+            </div>
+
+    </div>
+</form>
 
 {% endblock %}
