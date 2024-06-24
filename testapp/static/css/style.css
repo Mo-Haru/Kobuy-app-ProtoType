@@ -42,6 +42,7 @@ li.login {
 .line {
 	display: flex;
   }
+<<<<<<< HEAD
 
 
 
@@ -54,4 +55,10 @@ form.login-form{
   align-items: flex-start;
   gap: 16px;
 
+=======
+  
+/*下線取り消し*/
+  a {
+    text-decoration:none; 
+>>>>>>> 37601d0496e98080aead6e4b7ab9ba4b94baf2f9
 }
