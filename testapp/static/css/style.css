@@ -42,8 +42,6 @@ li.login {
 .line {
 	display: flex;
   }
-<<<<<<< HEAD
-
 
 
 /* ログインフォーム */
@@ -53,12 +51,23 @@ form.login-form{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  
+}
+md-outlined-text-field.login-form{
+	gap: 10px;
 
-=======
+}
   
 /*下線取り消し*/
   a {
     text-decoration:none; 
->>>>>>> 37601d0496e98080aead6e4b7ab9ba4b94baf2f9
+}
+
+h1.rainbow{
+	background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 300%;
+	font-weight: bold;
+	display: inline-block;
 }
