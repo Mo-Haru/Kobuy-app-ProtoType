@@ -42,3 +42,8 @@ li.login {
 .line {
 	display: flex;
   }
+  
+/*下線取り消し*/
+  a {
+    text-decoration:none; 
+}

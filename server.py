@@ -1,6 +1,6 @@
 from testapp import app, db
 
-create_db = 1 #    0(app.run) or 1(create database)
+create_db = 0 #    0(app.run) or 1(create database)
 
 if __name__ == '__main__':
     if create_db == 0:
