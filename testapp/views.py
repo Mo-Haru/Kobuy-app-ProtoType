@@ -1,6 +1,6 @@
 from testapp import app, db
 from flask import render_template, request
-from testapp.models.reserve import Reserve
+from testapp.models.models import Reserve, Menu
 
 @app.route('/')
 def index():

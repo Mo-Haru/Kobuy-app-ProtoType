@@ -5,7 +5,6 @@ app = Flask(__name__)
 app.config.from_object('testapp.config')
 
 db = SQLAlchemy(app)
-from testapp.models import menu
-from testapp.models import reserve
+from testapp.models import models
 
 import testapp.views
