@@ -1,9 +1,10 @@
-from testapp import app, db
-from flask import render_template,  request, redirect, url_for, flash
-from testapp.models.models import Reserve, Menu
-# from testapp.forms import LoginForm
-# from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
+from testapp import app, db, LoginManager
+from flask import render_template,  request, redirect, url_for, flash, Blueprint
+from testapp.models.models import Reserve, Menu, User, Notification
+from testapp.forms import LoginForm, RegisterForm
+from flask_login import UserMixin, login_user, logout_user, login_required
 
+main = Blueprint('main', __name__)
 
 @app.route('/')
 def index():
@@ -11,31 +12,54 @@ def index():
 
     return render_template('testapp/index.html', webtitle = title)
 
-@app.route("/login")
-# @app.route("/login", methods=['GET', 'POST'])
+# @app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     title = "ログイン"
-    # form = LoginForm()
-    # if form.validate_on_submit():
-    #     #フォーム入力したアドレスがDB内にあるか検索
-    #     user = User.query.filter_by(email=form.email.data).first()
-    #     if user is not None:
-    #             #check_passwordはUserモデル内の関数
-    #             if user.check_password(form.password.data):
-    #                 #ログイン処理。ログイン状態として扱われる。
-    #                 login_user(user)
-    #                 next = request.args.get('next')
-    #                 if next == None or not next[0] == '/':
-    #                     next = url_for('user_maintenance')
-    #                 return redirect(next)
-                    
-    #             else:
-    #                 flash('パスワードが一致しません')
-    #     else:
-    #         flash('入力されたユーザーは存在しません')
+    form = LoginForm()
+    if form.validate_on_submit():
+        #フォーム入力したアドレスがDB内にあるか検索
+        user = User.query.filter_by(email=form.email.data).first()
 
-    # return render_template('testapp/login.html', form=form, webtitle=title)
-    return render_template('testapp/login.html', webtitle=title)
+        if user is not None:
+                #check_passwordはUserモデル内の関数
+                if user.check_password(form.password.data):
+                    #ログイン処理。ログイン状態として扱われる。
+                    login_user(user)
+                    next = request.args.get('next')
+                    if next == None or not next[0] == '/':
+                        next = url_for('user_maintenance')
+                    # return redirect(request.args.get("next") or url_for("index"))
+                    return redirect(url_for("index"))
+                else:
+                    flash('パスワードが一致しません')
+        else:
+            flash('入力されたユーザーは存在しません')
+
+    return render_template('testapp/login.html', form=form, webtitle=title)
+    # return render_template('testapp/login.html', webtitle=title)
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    title = "アカウントの作成"
+    form = RegisterForm()
+    if request.method == 'POST' and form.validate():
+        user = User(
+            username=form.username.data,
+            grade=form.grade.data,
+            cls=form.cls.data,
+            num=form.num.data,
+            email=form.email.data,
+            password_hash=form.password.data
+        )
+        db.session.add(user)
+        db.session.commit()
+        flash(f'{form.username.data}さん登録ありがとうございます。')
+        return redirect(url_for('login'))
+
+    return render_template('testapp/register.html', form=form, webtitle=title)
+
+
 
 
 @app.route('/logout')
@@ -64,6 +88,7 @@ def contact():
 
 
 @app.route("/reserve", methods = ["GET", "POST"])
+@login_required
 def reserve():
     title = "購買予約フォーム"
     if request.method == "GET":

@@ -9,6 +9,8 @@ flask-sqlalchemy = "==3.0.3"
 testapp = "*"
 flask-login = "*"
 flask-wtf = "*"
+flask-migrate = "*"
+email-validator = "*"
 
 [dev-packages]
 

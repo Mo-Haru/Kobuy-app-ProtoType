@@ -1,7 +1,8 @@
-from testapp import app, db
-
+from testapp import db
+from testapp import create_app
 create_db = 0         # 0(app.run) or 1(create database)
 
+app = create_app()
 
 if __name__ == '__main__':
     if create_db == 0:
