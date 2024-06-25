@@ -14,9 +14,8 @@ def index():
 @app.route("/login")
 # @app.route("/login", methods=['GET', 'POST'])
 def login():
-    title = "ログイン"   
+    title = "ログイン"
     # form = LoginForm()
-
     # if form.validate_on_submit():
     #     #フォーム入力したアドレスがDB内にあるか検索
     #     user = User.query.filter_by(email=form.email.data).first()
@@ -35,7 +34,7 @@ def login():
     #     else:
     #         flash('入力されたユーザーは存在しません')
 
-    # return render_template('login.html', form=form, webtitle=title)
+    # return render_template('testapp/login.html', form=form, webtitle=title)
     return render_template('testapp/login.html', webtitle=title)
 
 

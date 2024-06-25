@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 app = Flask(__name__)
+# app.config['SECRET_KEY'] = 'secret_key'
 app.config.from_object('testapp.config')
 
 # #インスタンス化
