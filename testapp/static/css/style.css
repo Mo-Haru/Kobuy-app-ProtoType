@@ -48,29 +48,6 @@ li.login {
   }
 
 
-/* ログインフォーム */
-
-div.container{
-	margin: 25px;
-	width: 50%;
-	height: 100%;
-	outline: none 1px;
-	background-color: #ffffff;
-	/* 子要素を水平方向の中央に配置する */
-	display: flex;
-	justify-content: center;
-}
-
-form.login-form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-md-outlined-text-field.login-form{
-	gap: 10px;
-}
-
 
 
 h1.rainbow{
