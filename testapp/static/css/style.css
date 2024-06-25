@@ -8,11 +8,12 @@ header {
 	background:#3c3c3c;
 	display: inline-block;
 	height: 50px;
-
 }
+
 header ul {
 	padding: 0 30px;
 }
+
 header li {
 	display: inline-block;
 	padding: 0 6px;
@@ -21,7 +22,6 @@ header li {
     line-height: 50px;
     align-items: center;
 }
-
 
 header li a {
 	color: #fff;
@@ -38,7 +38,6 @@ li.login {
 }
 
 
-
 /*画像横並び*/
 .list {
     list-style: none;
@@ -50,7 +49,6 @@ li.login {
 
 
 /* ログインフォーム */
-
 
 div.container{
 	margin: 25px;
@@ -71,12 +69,9 @@ form.login-form{
 }
 md-outlined-text-field.login-form{
 	gap: 10px;
+}
 
-}
-/*下線取り消し*/
-  a {
-    text-decoration:none; 
-}
+
 
 h1.rainbow{
 	background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
@@ -96,3 +91,70 @@ h3.rainbow{
 }
 
 
+
+
+
+
+.navigation {
+	border: 1px solid #5c5c5c;
+	height: 100vh;
+	width: 60px;
+	position: relative;
+	background-color: #666666;
+	border-left: 10px 0 0 solid #666666;
+	overflow-x: hidden;
+	transition: all 0.5s;
+	position: fixed;
+}
+
+.navigation:hover {
+	width: 200px;
+}
+
+.navigation ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+.navigation ul li {
+	list-style: none;
+	display: block;
+	width: 100%;
+	position: relative;
+	border-radius: 15px;
+}
+
+.navigation ul li:hover {
+	background-color: #8d8d8d6e;
+}
+
+.navigation ul li a {
+	text-decoration: none;
+	color: white;
+	width: 100%;
+	display: flex;
+	position: relative;
+}
+
+.navigation ul li a .icon {
+	display: block;
+	min-width: 45px;
+	height: 60px;
+	line-height: 70px;
+	text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+	font-size: 1.5rem;
+}
+
+.navigation ul li a .title {
+	padding-left: 10px;
+	height: 60px;
+	line-height: 60px;
+	white-space: nowrap;
+}
