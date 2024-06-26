@@ -23,3 +23,5 @@ class RegisterForm(FlaskForm):
 
 class ReserveForm(FlaskForm):
     id = IntegerField("ID")
+    syohin = IntegerField("予約した商品")
+    
