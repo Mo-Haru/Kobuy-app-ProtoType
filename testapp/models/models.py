@@ -13,8 +13,15 @@ class User(UserMixin, db.Model):
     num = db.Column(db.Integer, nullable=False)
     password_hash = db.Column(db.String, nullable=False)
 
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+    
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def __repr__(self):
+        return f'<User {self.username}>'
+
 
 class Menu(db.Model):
     __tablename__ = 'menu'
