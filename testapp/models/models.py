@@ -46,3 +46,7 @@ class Notification(db.Model):
     title = db.Column(db.String(128), nullable=False)
     content = db.Column(db.Text, nullable=False)
     date_posted = db.Column(db.DateTime, default=datetime.now)
+
+class reservation(db.model):
+    id = db.Column(db.Integer, primary_key=True)
+    
