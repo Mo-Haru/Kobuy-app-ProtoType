@@ -21,8 +21,8 @@ class RegisterForm(FlaskForm):
     
 class ReserveForm(FlaskForm):
     id = IntegerField("ID")
-    productname1 = IntegerField("予約した商品１つ目")
-    productname2 = IntegerField("予約した商品２つ目")
-    productname3 = IntegerField("予約した商品３つ目")
-    productname4 = IntegerField("予約した商品４つ目")
-    productname5 = IntegerField("予約した商品５つ目")
+    productname1 = TextAreaField("予約した商品１つ目")
+    productname2 = TextAreaField("予約した商品２つ目")
+    productname3 = TextAreaField("予約した商品３つ目")
+    productname4 = TextAreaField("予約した商品４つ目")
+    productname5 = TextAreaField("予約した商品５つ目")
