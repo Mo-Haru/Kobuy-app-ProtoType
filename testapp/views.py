@@ -52,14 +52,11 @@ def register():
     return render_template('testapp/register.html', form=form, webtitle=title)
 
 
-
-
 @app.route('/logout')
 def logout():
     #現在のユーザーをログアウト状態にする
     logout_user()
     return redirect(url_for('login'))
-
 
 
 @app.route("/menu")
