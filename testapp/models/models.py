@@ -47,5 +47,8 @@ class Notification(db.Model):
     content = db.Column(db.Text, nullable=False)
     date_posted = db.Column(db.DateTime, default=datetime.now)
 
-class reservation(db.Model):
+class Reserved(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    productname = db.Column(db.String(255))
+    product_image = db.Column(db.String(255))
+    price = db.Column(db.String(255))
