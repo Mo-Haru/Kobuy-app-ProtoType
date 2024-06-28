@@ -23,6 +23,10 @@ class User(UserMixin, db.Model):
         return f'<User {self.username}>'
 
 
+# class Roles(db.Model):
+#     id = db.Column(db.Integer)
+
+
 class Menu(db.Model):
     __tablename__ = 'menu'
     id = db.Column(db.Integer, primary_key=True)
