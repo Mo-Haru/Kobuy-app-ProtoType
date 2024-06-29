@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+<div class="navi">
 <h1>Register</h1>
 <form method="POST">
     {{ form.csrf_token }}
@@ -51,7 +51,7 @@
     {{ form.submit() }}
 
 </form>
-
+</div>
 
 
 
