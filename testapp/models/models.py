@@ -3,6 +3,10 @@ from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import check_password_hash, generate_password_hash
 
+roles_users = db.Table('roles_users',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer, db.ForeignKey('role.id'))
+)
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -12,6 +16,7 @@ class User(UserMixin, db.Model):
     cls = db.Column(db.Integer, nullable=False)
     num = db.Column(db.Integer, nullable=False)
     password_hash = db.Column(db.String, nullable=False)
+    roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -23,8 +28,12 @@ class User(UserMixin, db.Model):
         return f'<User {self.username}>'
 
 
-# class Roles(db.Model):
-#     id = db.Column(db.Integer)
+class Role(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), unique=True)
+
+    def __repr__(self):
+        return f'<Role {self.name}>'
 
 
 class Menu(db.Model):
