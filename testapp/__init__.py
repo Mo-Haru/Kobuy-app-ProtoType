@@ -13,7 +13,7 @@ login_manager = LoginManager()
 # アプリをログイン機能を紐付ける
 login_manager.init_app(app)
 # 未ログインユーザーを転送する(ここでは'login'ビュー関数を指定)
-login_manager.login_view = 'users.login'
+login_manager.login_view = 'login'
 
 # Userモデルをインポート
 from testapp.models.models import User
