@@ -103,3 +103,8 @@ def reserve_list():
     reserve = Reserve.query.all()
     return render_template("/testapp/reserve_list.html", reserve=reserve)
 
+@app.route("/admin")
+@login_required("admin")
+def adminmain():
+    title="管理画面"
+    return render_template("admin/adminmain.html", webtitle=title)
